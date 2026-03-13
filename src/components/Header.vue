@@ -115,4 +115,23 @@ const tabs = [
 .nav-button:active {
   transform: translateY(1px);
 }
+@media (max-width: 768px) {
+  .buttonBox {
+    padding-left: 0; /* 取消左侧偏移，居中对齐 */
+    justify-content: center; /* 按钮整体居中 */
+    width: 100%;
+  }
+
+  .nav-button {
+    flex: 1; /* 让每个按钮平分剩余空间 */
+    min-width: 0; /* 覆盖掉原来的 100px，允许收缩 */
+    padding: 10px 5px; /* 减小内边距，防止文字换行 */
+    font-size: 14px; /* 稍微调小字号 */
+    white-space: nowrap; /* 强制文字不换行 */
+  }
+
+  .nav-button.active::after {
+    width: 40%; /* 手机上指示条短一点更好看 */
+  }
+}
 </style>

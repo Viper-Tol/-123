@@ -30,11 +30,22 @@
         </div>
       </div>
 
-      <div class="stats-footer">
-        <span class="badge">政府认证资质</span>
-        <span class="badge">连续2年先进单位</span>
-        <p class="contact-hint">📍 服务范围：XX市8个乡镇 | 📞 24小时咨询热线：xxx-xxxxxxx</p>
-      </div>
+<div class="stats-footer">
+  <div class="badges">
+    <span class="badge">政府认证资质</span>
+    <span class="badge">连续2年先进单位</span>
+  </div>
+
+  <div class="service-locations">
+    <div class="loc-item">📍 <strong>总部：</strong>伊宁市巴彦岱镇</div>
+    <div class="loc-item">📍 <strong>分站：</strong>潘津镇服务站</div>
+    <div class="loc-item">🤝 <strong>合作：</strong>8个乡镇兽医站、3个养殖合作社</div>
+  </div>
+
+  <p class="contact-hotline">
+    📞 24小时咨询热线：<a href="tel:15299261462">15299261462</a>
+  </p>
+</div>
     </div>
   </section>
 </template>
@@ -180,6 +191,41 @@
   
   .stats-grid {
     gap: 20px;
+  }
+}
+.service-locations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 30px; /* 横向间距大一点，纵向间距小一点 */
+  margin: 20px 0;
+  color: #1a5f3f;
+  font-size: 14px;
+}
+
+.loc-item {
+  display: flex;
+  align-items: center;
+}
+
+.contact-hotline {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c7a4d;
+  margin: 0;
+}
+
+.contact-hotline a {
+  color: #2c7a4d;
+  text-decoration: underline; /* 视觉提示这里可以点 */
+}
+
+/* 适配移动端：把横向排列变垂直 */
+@media (max-width: 600px) {
+  .service-locations {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
 </style>
